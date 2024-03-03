@@ -19,7 +19,7 @@ public class LightningSpellManager : MonoBehaviour
         _spell = _spellsManager.lightningball;
         _spellAttributes = _spellsManager.spellsAttributes[_spell.tag];
 
-        _enemyFinder = gameObject.GetComponent<NearestEnemyFinder>();
+        _enemyFinder = GetComponent<NearestEnemyFinder>();
         _enemyFinder.limitDistance = true;
         _enemyFinder.range = _spellAttributes.range;
 

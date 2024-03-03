@@ -4,4 +4,6 @@ public class PlayerAttributes
     public float range;
     public float attackSpeed;
     public float movementSpeed;
+    public float defense;
+    public float gold;
 }

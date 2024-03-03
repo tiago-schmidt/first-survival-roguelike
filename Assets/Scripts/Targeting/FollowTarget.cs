@@ -3,10 +3,7 @@ using UnityEngine.AI;
 
 public class FollowTarget : MonoBehaviour
 {
-    [HideInInspector]
     public Transform target;
-
-    [HideInInspector]
     public NavMeshAgent agent;
 
     void Start()

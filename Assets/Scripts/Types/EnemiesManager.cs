@@ -18,7 +18,7 @@ public class EnemiesManager : MonoBehaviour
                 movementSpeed = 3.5f,
             }
         },
-        { 
+        {
             Tags.ENEMY_2, new EnemyAttributes() {
                 damage = 5,
                 movementSpeed = 3.5f,
@@ -38,13 +38,13 @@ public class EnemiesManager : MonoBehaviour
         },
         { 
             Tags.ELITE_ENEMY_1, new EnemyAttributes() {
-                damage = 5,
+                damage = 25,
                 movementSpeed = 4.5f,
             }
         },
         { 
             Tags.BOSS_ENEMY_1, new EnemyAttributes() {
-                damage = 5,
+                damage = 40,
                 movementSpeed = 5,
             }
         },

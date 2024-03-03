@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3619778842311112642}
-  - component: {fileID: 2329930051456182415}
   - component: {fileID: 8061867913966013633}
+  - component: {fileID: 2623954738705760459}
   m_Layer: 0
   m_Name: Lightningball Spell
   m_TagString: Lightningball Spell
@@ -33,19 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2329930051456182415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2996748011451605847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da4f1f1228f4f64390bb57dbc7033a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
 --- !u!114 &8061867913966013633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,5 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78190c31a39d98a4d8f230bf19180662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
-  spell: {fileID: 706091993427638140, guid: daaab1c91481979458bb782c29fc1c8e, type: 3}
+--- !u!114 &2623954738705760459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996748011451605847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8c31f85eaee4b48988126967754730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  limitDistance: 0
+  nearestEnemy: {fileID: 0}

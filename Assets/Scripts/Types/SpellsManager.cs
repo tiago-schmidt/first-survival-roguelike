@@ -11,8 +11,8 @@ public class SpellsManager : MonoBehaviour
     {
         { 
             Tags.FIRE_BALL, new SpellAttributes() {
-                damage = 10,
-                range = 10f,
+                damage = 10f,
+                range = 6f,
                 attackSpeed = 8.5f,
                 destroyOnContact = false,
                 triggerInvunerability = true
@@ -20,9 +20,9 @@ public class SpellsManager : MonoBehaviour
         },
         { 
             Tags.LIGHTNING_BALL, new SpellAttributes() {
-                damage = 35,
-                range = 10,
-                attackSpeed = 1,
+                damage = 35f,
+                range = 8f,
+                attackSpeed = 1.25f,
                 destroyOnContact = true,
                 triggerInvunerability = false,
             }

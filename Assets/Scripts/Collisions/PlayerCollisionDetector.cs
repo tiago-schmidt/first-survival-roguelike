@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerCollisionDetector : MonoBehaviour
 {
+    private PlayerManager _playerManager;
     private IDictionary<string, EnemyAttributes> _enemiesAttributes;
-    private HealthBarManager healthBarManager;
-    private readonly float invulnerabilityTime = 0.25f;
+    private HealthBarManager _healthBarManager;
+    private readonly float _invulnerabilityTime = 0.25f;
 
     private void Start()
     {
-        healthBarManager = gameObject.GetComponentInChildren<HealthBarManager>();
+        _healthBarManager = gameObject.GetComponentInChildren<HealthBarManager>();
 
         _enemiesAttributes = GameObject.FindGameObjectWithTag(Tags.ENEMIES_MANAGER)
             .GetComponent<EnemiesManager>().enemiesAttributes;
+
+        _playerManager = GameObject.FindGameObjectWithTag(Tags.PLAYER_MANAGER)
+            .GetComponent<PlayerManager>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -23,9 +27,16 @@ public class PlayerCollisionDetector : MonoBehaviour
         if (enemyTag.Contains("Enemy"))
         {
             float enemyDamage = _enemiesAttributes[enemyTag].damage;
+            float damageReceived = _playerManager.CalculateDefenseReduction(enemyDamage);
 
-            healthBarManager.UpdateHealth(-enemyDamage);
+            _healthBarManager.UpdateHealth(-damageReceived);
             StartCoroutine(GetInvunerability(other));
+        }
+
+        if(_healthBarManager.currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            FindObjectOfType<LifeCycleManager>().ShowGameOverScreen();
         }
     }
 
@@ -33,7 +44,7 @@ public class PlayerCollisionDetector : MonoBehaviour
     {
         Physics.IgnoreCollision(GetComponent<Collider>(), other, true);
 
-        yield return new WaitForSeconds(invulnerabilityTime);
+        yield return new WaitForSeconds(_invulnerabilityTime);
 
         Physics.IgnoreCollision(GetComponent<Collider>(), other, false);
     }

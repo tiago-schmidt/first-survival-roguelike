@@ -56,6 +56,7 @@ public class EnemyCollisionDetector : MonoBehaviour
         // bonus damage will be: 1 + 1.15 = 2.15;
         float playerDamageBonus = 1 + (_playerAttributes.damage / 100);
         float totalDamage = playerDamageBonus * spellDamage;
+
         // totalDamage = 21.5;
         return totalDamage;
     }

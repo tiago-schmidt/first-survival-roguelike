@@ -23,4 +23,8 @@ public static class Tags
     public readonly static string SPELLS_MANAGER = "Spells Manager";
     public readonly static string PLAYER_MANAGER = "Player Manager";
     public readonly static string ENEMIES_MANAGER = "Enemies Manager";
+    public readonly static string SCORE_MANAGER = "Score Manager";
+
+    // UI
+    public readonly static string TIMER = "Timer";
 }
